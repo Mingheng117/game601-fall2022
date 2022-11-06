@@ -161,11 +161,11 @@ You see the ring on the table in the virus lab. You try to open the door of the 
 Dr.Z out of the office.
 
 
-[[Go Back-&gt;The Laboratory(after Six Months)]]</tw-passagedata><tw-passagedata pid="13" name="Walking around" tags="" position="1575,850" size="100,100">You found that Dr.Z&#39;s computer controls the door and the computer needs a password to be unlocked.
+[[Go Back-&gt;The Laboratory(after Six Months)]]</tw-passagedata><tw-passagedata pid="13" name="Walking around" tags="" position="1575,875" size="100,100">You found that Dr.Z&#39;s computer controls the door and the computer needs a password to be unlocked.
 
 [[Attempt to crack the computer]]
 
-[[Go Back-&gt;The Laboratory 2nd (after Six Months)]]</tw-passagedata><tw-passagedata pid="14" name="Attempt to crack the computer" tags="" position="1800,850" size="100,100">Hacking
+[[Go Back-&gt;The Laboratory 2nd (after Six Months)]]</tw-passagedata><tw-passagedata pid="14" name="Attempt to crack the computer" tags="" position="1800,900" size="100,100">Hacking
 
 {(click: &quot;Hacking&quot;)
 [
@@ -180,7 +180,33 @@ Dr.Z out of the office.
 ]
 }
 
-[[Go Back-&gt;The Laboratory 2nd (after Six Months)]]</tw-passagedata><tw-passagedata pid="15" name="Open the door and enter the virus lab" tags="" position="1975,850" size="100,100">Coming soon...</tw-passagedata><tw-passagedata pid="16" name="Ending1" tags="" position="1800,650" size="100,100">You waited a while.
+[[Go Back-&gt;The Laboratory 2nd (after Six Months)]]</tw-passagedata><tw-passagedata pid="15" name="Open the door and enter the virus lab" tags="" position="2100,1000" size="100,100">&#39;&#39;The Virus Lab&#39;&#39;
+(set: $questStage to 20)
+The ring is on the table. Next to it is a report.
+
+Also attracting your attention is a computer screen showing a chat between Anna and Dr.
+
+{(click: &quot;chat&quot;)+(text-color:lime)
+	[
+    - Anna: What kind of virus did you decide to use to infect the ring?`
+    `- Dr.Z: Virus Q.`
+    `- Anna: I see, then I should not be able to see Hans come back home.`
+    `- Dr.Z: Get the wine ready, the research is ours.`
+    `- Anna: Sure, I love you.`
+    `- Dr.Z: I love you too.`
+    ` `
+    `(text-color:blue)[[Should do something?]]
+	]
+}
+
+{(click: &quot;report&quot;)
+	[
+    This report documents three types of viruses.`
+    `[[Virus Q]]`
+    `[[Virus X]]`
+    `[[Virus V]]
+	]
+}</tw-passagedata><tw-passagedata pid="16" name="Ending1" tags="" position="1800,500" size="100,100">You waited a while.
 
 {(click: &quot;waited&quot;)+(text-color:lime)
 	[
@@ -198,7 +224,7 @@ Dr.Z out of the office.
 	[
     - Dr.Z: There is also a lot of work today.
 	]
-}</tw-passagedata><tw-passagedata pid="17" name="Enter the virus lab" tags="" position="1975,650" size="100,100">&#39;&#39;The Virus Lab&#39;&#39;
+}</tw-passagedata><tw-passagedata pid="17" name="Enter the virus lab" tags="" position="2000,500" size="100,100">&#39;&#39;The Virus Lab&#39;&#39;
 
 The ring is on the table. Next to it is a report.
 
@@ -217,7 +243,7 @@ The ring is on the table. Next to it is a report.
     `[[Virus X]]`
     `[[Virus V]]
 	]
-}</tw-passagedata><tw-passagedata pid="18" name="Go back to Anna" tags="" position="2125,650" size="100,100">&#39;&#39;The Apartment&#39;&#39;
+}</tw-passagedata><tw-passagedata pid="18" name="Go back to Anna" tags="" position="2300,500" size="100,100">&#39;&#39;The Apartment&#39;&#39;
 
 Anna is sitting in the living room watching TV.
 
@@ -230,40 +256,50 @@ Anna is sitting in the living room watching TV.
     ` `
     `(text-color:blue)[[It&#39;s nighttime]]
 	]
-}</tw-passagedata><tw-passagedata pid="19" name="Virus Q" tags="" position="1875,450" size="100,100">Name: Virus Q
+}</tw-passagedata><tw-passagedata pid="19" name="Virus Q" tags="" position="1800,700" size="100,100">&#39;&#39;Name:&#39;&#39; Virus Q
 
-Infection feature: N/A
+&#39;&#39;Infection feature:&#39;&#39; Infected people&#39;s eyes turn red.
 
-Effect: Causes death within a short time after infection.
+&#39;&#39;Effect: &#39;&#39;Causes death within a short time after infection.
 
 
 [[Virus X]]
 
 [[Virus V]]
 
-[[Go Back-&gt;Enter the virus lab]]</tw-passagedata><tw-passagedata pid="20" name="Virus X" tags="" position="2050,350" size="100,100">Name: Virus X
+(if: $questStage is 20)[
+[[Go Back-&gt;Open the door and enter the virus lab]]
+](else: )
+    [[[Go Back-&gt;Enter the virus lab]]]
+</tw-passagedata><tw-passagedata pid="20" name="Virus X" tags="" position="2050,800" size="100,100">&#39;&#39;Name: &#39;&#39;Virus X
 
-Infection feature: N/A
+&#39;&#39;Infection feature: &#39;&#39;The infected person has no distinctive features and the body will show green spots after death
 
-Effect: Infection does not cause death until 5 hours after infection.
+&#39;&#39;Effect: &#39;&#39;Infection does not cause death until 5 hours after infection.
 
 
 [[Virus Q]]
 
 [[Virus V]]
 
-[[Go Back-&gt;Enter the virus lab]]</tw-passagedata><tw-passagedata pid="21" name="Virus V" tags="" position="2200,475" size="100,100">Name: Virus V
+(if: $questStage is 20)[
+[[Go Back-&gt;Open the door and enter the virus lab]]
+](else: )
+    [[[Go Back-&gt;Enter the virus lab]]]</tw-passagedata><tw-passagedata pid="21" name="Virus V" tags="" position="2300,700" size="100,100">&#39;&#39;Name:&#39;&#39; Virus V
 
-Infection feature: N/A
+&#39;&#39;Infection feature:&#39;&#39; The infected will gradually become quiet and want to sleep, and then wake up as a monster
 
-Effect: After 6 hours of infection, it will become a monster and very aggressive.
+&#39;&#39;Effect:&#39;&#39; After 6 hours of infection, it will become a monster and very aggressive.
 
 
 [[Virus Q]]
 
 [[Virus X]]
 
-[[Go Back-&gt;Enter the virus lab]]</tw-passagedata><tw-passagedata pid="22" name="It&#39;s nighttime" tags="" position="2300,650" size="100,100">&#39;&#39;The Apartment (nighttime)&#39;&#39;
+(if: $questStage is 20)[
+[[Go Back-&gt;Open the door and enter the virus lab]]
+](else: )
+    [[[Go Back-&gt;Enter the virus lab]]]</tw-passagedata><tw-passagedata pid="22" name="It&#39;s nighttime" tags="" position="2500,500" size="100,100">&#39;&#39;The Apartment (nighttime)&#39;&#39;
 
 Anna heard Hans screams of pain and Anna found Hans dead in the toilet.
 
@@ -274,14 +310,96 @@ Anna heard a knock at the door and opened it.
     - Anna: Dr.Z? Why did you come? Why did Hans come back?`
     `- Dr.Z: It is virus X, that is on the ring. virus X does not attack as quickly.I guess Hans is dead now.`
     `- Anna: That means I&#39;m infected with the virus X too! You want to kill me too!? Why do you want to kill me? I love you so much.`
-    `- Dr.Z: (text-color:blue)[Sorry Anna], the research is mine now, I will be rich than anyone. 
+    `- Dr.Z: (text-color:blue)[Sorry Anna] 
 	]
 }
 
-{(click: &quot;Sorry Anna&quot;)
+{(click-append: &quot;Sorry Anna&quot;)
 	[
-    Dr.Z close the door.`
-    `He quietly listen to Anna&#39;s screams in the night until the night becomes quiet again.
+    (text-color:lime)[, the research is mine now, I will be rich than anyone.]`
+    ` `
+    ` `
+    `(text-color:white)[Dr.Z close the door.`
+    `He quietly listen to Anna&#39;s screams in the night until the night becomes quiet again.]
+	]
+}
+
+</tw-passagedata><tw-passagedata pid="23" name="Should do something?" tags="" position="2300,1000" size="100,100">&#39;&#39;The Virus Lab&#39;&#39;
+
+(text-color:cyan)[Virus Q: Causes death within a short time after infection.
+
+Virus X: Infection does not cause death until 5 hours after infection.
+
+Virus V: After 6 hours of infection, it will become a monster and very aggressive.]
+
+You decide to change
+(click-append: &quot;change&quot;)[ the virus infecting the ring to Virus V, and inject]
+(click-append: &quot;inject&quot;)[ youself with the antidote to Virus V. After all this is done, you look at this ring and get lost in thought.]
+
+{(click: &quot;this ring&quot;)
+	[
+    You put away the ring and prepare to return to Anna.`
+    `
+    (text-color:blue)[[Go to Anna]]
+	]
+}</tw-passagedata><tw-passagedata pid="24" name="Go to Anna" tags="" position="2500,1000" size="100,100">&#39;&#39;The Apartment&#39;&#39;
+
+Anna is sitting in the living room watching TV.
+
+{(click: &quot;Anna&quot;)+(text-color:lime)
+	[
+    - Hans: I brought the ring back. Here you are.`
+    `- Anna: You back? I mean Why did you go for so long?`
+   ` - Hans: Dr.Z was not in the lab, I waited for him to return to get the ring.`
+    `- Anna: Yeah, let&#39;s drink some wine.`
+    `......`
+    `(text-color:blue)[Two hours later].
+	]
+}
+
+{(click: &quot;Two hours later&quot;)+(text-color:lime)
+	[
+    - Hans: Are you okay, Anna?`
+    `- Anna: Yeah, I&#39;m just feel so tired, I need to get some sleep.`
+   ` - Hans: Okay, I&#39;ll clear the table.`
+    ` `
+    `(text-color:blue)[[Nighttime]]
+	]
+}</tw-passagedata><tw-passagedata pid="25" name="Nighttime" tags="" position="2700,1000" size="100,100">&#39;&#39;The Apartment (nighttime)&#39;&#39;
+
+A knock on the door.
+Anna woke up, she feels very sick.
+She heard the knock at the door and opened it.
+
+{(click: &quot;opened&quot;)+(text-color:lime)
+	[
+    - Anna: Dr.Z? Why did you come? Why did Hans come back?`
+    `- Dr.Z: It is virus X, that is on the ring. virus X does not attack as quickly.I guess Hans is dead now.`
+    `- Anna: I don&#39;t know, I was too tired and slept through it. I don&#39;t know if Hans is dead or not. Wait! You changed the virus to X. You want to kill me too!? Why do you want to kill me? I love you so much.`
+    `- Dr.Z: (text-color:blue)[Sorry Anna] 
+	]
+}
+{(click-append: &quot;Sorry Anna&quot;)
+	[(text-color:lime)[ , the research only belongs to me, I will be rich than anyone.`
+    `- Anna: No!]`
+    ` `
+    `(text-color:white)[Anna&#39;s screams gradually became muffled and her body began to shake.`
+    `Dr.Z felt strange and turned around to (text-color:blue)[leave].]
+    ]
+}
+
+{(click: &quot;leave&quot;)
+	[
+    Dr.Z found the door locked.`
+    `He heard a beast-like grunt from behind him.`
+    `Dr.Z turned around and a monster appeared in front of him. It turned out that Anna was infected with virus V.`
+    `Dr.Z understood everything and he called out a name loudly,&#39;&#39;-Hans-&#39;&#39;
+	]
+}
+
+{(click: &quot;-Hans-&quot;)
+	[
+    Hans quietly listen to Dr.Z&#39;s screams in the night until the night becomes quiet again.
 	]
 }
 
